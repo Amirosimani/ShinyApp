@@ -19,13 +19,13 @@ fluidPage(
             sliderInput("slider", "Frequency Range:",
                         min = 1, max = 2000, value = 100)
   ),
-  
+   
     # helpText("what is TFID?")
     # Show Word Cloud
     mainPanel(
       tabsetPanel(
         tabPanel("Word Cloud", plotOutput("plot")),
-        tabPanel("Table", tableOutput("table")),
+        tabPanel("Table", dataTableOutput(outputId= "table")),
         tabPanel("Histogram", plotOutput("histogram"))
     )
     )

@@ -15,9 +15,10 @@ function(input, output, clientData, session) {
                   colors=brewer.pal(8, "Dark2")
                   )
   })
-  output$table <- renderTable({
-   data[1,input$selection]
-  })
+  output$table <- renderDataTable({
+    plotdata <- data.frame(data[,1],data[,input$selection])
+
+})
   output$histogram <- renderPlot({
     hist( data[,input$selection],  breaks = (max(data[,input$selection])-min(data[,input$selection])) , col = 'darkgray', border = 'white', main = "Histogram", xlim=c(0,150), ylab = "word numbers")  
   })
