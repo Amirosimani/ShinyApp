@@ -17,8 +17,11 @@ fluidPage(
      actionButton("update", "Change"),
      hr(),
             sliderInput("slider", "Frequency Range:",
-                        min = 1, max = 2000, value = 100)
-  ),
+                        min = 10, max = 2000, value = 100, step= 10, animate=F
+                        
+                        ),
+     downloadButton('downloadData', 'Download')
+     ),
    
     # helpText("what is TFID?")
     # Show Word Cloud
