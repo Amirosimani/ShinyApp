@@ -24,7 +24,7 @@ function(input, output, clientData, session) {
 
 })
   output$histogram <- renderPlot({
-    hist( data[,input$selection],  breaks = (max(data[,input$selection])-min(data[,input$selection])) , col = 'darkgray', border = 'white', main = "Histogram", xlim=c(0,150), ylab = "word numbers")  
+    hist( data[,input$selection],  breaks = (max(data[,input$selection])-min(data[,input$selection])) , col = 'darkgray', border = 'white', main = "Distrubtion of words based on your selected value", xlim=c(0,150), xlab =input$selection ,ylab = "")  
   })
   
   output$downloadData <- downloadHandler ( filename = function() {paste(data, '.csv' , sep='')},
